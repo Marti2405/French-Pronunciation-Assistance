@@ -12,6 +12,9 @@ is selected, the user has to provide a recording of them saying one of the two c
 program outputs the predicted consonant for the recording, the percentage of accuracy, voicing, constriction 
 and energy comparing them with the aimed results.
 
+![Captura](https://user-images.githubusercontent.com/77886135/151234137-4aaa5572-3a29-4667-8e78-7c6462669d35.PNG)
+
+
 
 Algorithm description :
 
