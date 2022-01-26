@@ -2,6 +2,8 @@
 
 Detection and accuracy evaluation of pairs of consonants in oral French.
 
+Specified for voiceless/voice fricatioves.
+
 Description of the project :
 
 In French some pairs of consonants are difficult to pronounce especially for kids and French learners.
