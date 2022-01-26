@@ -2,7 +2,7 @@
 
 Detection and accuracy evaluation of pairs of consonants in oral French.
 
-Specified for voiceless/voice fricatives.
+Specified for voiceless/voice fricatives consonants.
 
 Description of the project :
 
