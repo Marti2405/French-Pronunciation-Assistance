@@ -1,4 +1,4 @@
-# Projet-2MIC_S2
+# French oral aid software using the Fourier transform and Neural Networks
 
 Detection and accuracy evaluation of pairs of consonants in oral French.
 
