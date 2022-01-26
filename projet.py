@@ -17,6 +17,8 @@ def show_fourier_graph_compare(PATH1 , PATH2):
     plt.plot(freqs[range(len(FFT)//2)] , FFT[range(len(FFT)//2)])
     plt.xlabel("Frequence (Hz)")
     plt.ylabel("Amplitude")
+    plt.xlim([0,20000])
+    plt.ylim(bottom=0)
     plt.title(PATH1)
     
 
@@ -31,6 +33,8 @@ def show_fourier_graph_compare(PATH1 , PATH2):
     plt.plot(freqs[range(len(FFT)//2)] , FFT[range(len(FFT)//2)])
     plt.xlabel("Frequence (Hz)")
     plt.ylabel("Amplitude")
+    plt.xlim([0,20000])
+    plt.ylim(bottom=0)
     plt.title(PATH2)
 
     #afficher les figures
