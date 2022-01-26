@@ -20,9 +20,9 @@ def show_fourier_graph_compare(PATH1 , PATH2):
     ############################################
     plot2 = plt.figure(2)
     s_rate , signal = wf.read(PATH2)
+    
 
-
-    FFT = abs(scipy.fft.fft(signal))
+    FFT = np.abs(scipy.fft.fft(signal))
     freqs = fftpk.fftfreq(len(FFT), (1.0/s_rate))
 
     plt.plot(freqs[range(len(FFT)//2)] , FFT[range(len(FFT)//2)])
