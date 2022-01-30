@@ -2,13 +2,13 @@ import scipy.io.wavfile as wf
 import scipy
 import scipy.fftpack as fftpk
 import numpy as np
-from matplotlib import pyplot as plt
 
-# this procedure shows the averaged fft graph of the .wav input file
-def show_fourier_graph_compare(PATH):
+
+# this function creates a matrice of 40000 lines from a .wav file. Used as input for the Neural Network.
+# in->PATH(file.wav) ; out->mat(40000,1)
+def create_nn_input(PATH):
     
-
-    #fast fourier transform of input signal
+    # fast fourier transform of the input signal
     s_rate , signal = wf.read(PATH)
     FFT = np.abs(fftpk.fft(signal))
     freqs = fftpk.fftfreq(len(FFT), (1.0/s_rate))
@@ -39,31 +39,21 @@ def show_fourier_graph_compare(PATH):
                 den = 0
                 a +=1
     
+
     # new frequences for res, you can use them to visualise the graph of the output with matplotlib
     freqs = np.arange(0.0,20000,0.5)
-    
-    # plot of the figure
+
+    # return res with 40000 values 
     
     while len(res) < 40000:
         res.append(0)
 
-    plt.plot(freqs, res[:40000])
-
-    plt.xlabel("Frequence (Hz)")
-    plt.ylabel("Amplitude")
-    plt.xlim([0,20000])
-    plt.ylim(bottom=0)
-    plt.title(PATH)
-
-    #show figure
-    plt.show()
+    return res[:40000]
 
 fem1 = "C:\\Users\\marti\\Desktop\\fem1.wav"
 vem1 = "C:\\Users\\marti\\Desktop\\vem1.wav"
 fft1 = "C:\\Users\\marti\\Desktop\\fft1.wav"
 vvt1 = "C:\\Users\\marti\\Desktop\\vvt1.wav"
 
-show_fourier_graph_compare(fft1)
-show_fourier_graph_compare(vvt1)
-show_fourier_graph_compare(fem1)
-show_fourier_graph_compare(vem1)
+print(create_nn_input(vvt1))
+
