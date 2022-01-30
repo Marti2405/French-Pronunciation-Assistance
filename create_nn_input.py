@@ -2,6 +2,7 @@ import scipy.io.wavfile as wf
 import scipy
 import scipy.fftpack as fftpk
 import numpy as np
+import os
 
 
 # this function creates a matrice of 40000 lines from a .wav file. Used as input for the Neural Network.
@@ -50,10 +51,14 @@ def create_nn_input(PATH):
 
     return res[:40000]
 
-fem1 = "C:\\Users\\marti\\Desktop\\fem1.wav"
-vem1 = "C:\\Users\\marti\\Desktop\\vem1.wav"
-fft1 = "C:\\Users\\marti\\Desktop\\fft1.wav"
-vvt1 = "C:\\Users\\marti\\Desktop\\vvt1.wav"
+
+# test with some audio samples
+__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+fft1 = os.path.join(__location__, 'audio_samples\\fft1.wav')
+vvt1 = os.path.join(__location__, 'audio_samples\\vvt1.wav')
+fem1 = os.path.join(__location__, 'audio_samples\\fem1.wav')
+vem1 = os.path.join(__location__, 'audio_samples\\vem1.wav')
 
 print(create_nn_input(vvt1))
 
