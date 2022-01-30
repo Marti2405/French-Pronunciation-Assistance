@@ -68,5 +68,6 @@ vvt1 = os.path.join(__location__, 'audio_samples\\vvt1.wav')
 fem1 = os.path.join(__location__, 'audio_samples\\fem1.wav')
 vem1 = os.path.join(__location__, 'audio_samples\\vem1.wav')
 
+# showing the fft averaged graph
 show_averaged_fourier_graph(fft1)
 
