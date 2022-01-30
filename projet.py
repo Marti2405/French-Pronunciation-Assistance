@@ -3,9 +3,10 @@ import scipy
 import scipy.fftpack as fftpk
 import numpy as np
 from matplotlib import pyplot as plt
+import os
 
 # this procedure shows the averaged fft graph of the .wav input file
-def show_fourier_graph_compare(PATH):
+def show_averaged_fourier_graph(PATH):
     
 
     #fast fourier transform of input signal
@@ -58,12 +59,14 @@ def show_fourier_graph_compare(PATH):
     #show figure
     plt.show()
 
-fem1 = "C:\\Users\\marti\\Desktop\\fem1.wav"
-vem1 = "C:\\Users\\marti\\Desktop\\vem1.wav"
-fft1 = "C:\\Users\\marti\\Desktop\\fft1.wav"
-vvt1 = "C:\\Users\\marti\\Desktop\\vvt1.wav"
 
-show_fourier_graph_compare(fft1)
-show_fourier_graph_compare(vvt1)
-show_fourier_graph_compare(fem1)
-show_fourier_graph_compare(vem1)
+# test with some audio samples
+__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+fft1 = os.path.join(__location__, 'audio_samples\\fft1.wav')
+vvt1 = os.path.join(__location__, 'audio_samples\\vvt1.wav')
+fem1 = os.path.join(__location__, 'audio_samples\\fem1.wav')
+vem1 = os.path.join(__location__, 'audio_samples\\vem1.wav')
+
+show_averaged_fourier_graph(fft1)
+
