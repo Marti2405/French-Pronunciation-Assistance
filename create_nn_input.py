@@ -60,5 +60,5 @@ vvt1 = os.path.join(__location__, 'audio_samples\\vvt1.wav')
 fem1 = os.path.join(__location__, 'audio_samples\\fem1.wav')
 vem1 = os.path.join(__location__, 'audio_samples\\vem1.wav')
 
-print(create_nn_input(vvt1))
+Matvvt1 = create_nn_input(vvt1)
 
