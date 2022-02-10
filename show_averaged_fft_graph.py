@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 import os , sys
 import math
 
-# class to remove output text for a command
+# class to remove output text 
 class suppress_output:
     def __init__(self, suppress_stdout=False, suppress_stderr=False):
         self.suppress_stdout = suppress_stdout
@@ -86,7 +86,7 @@ def show_averaged_fourier_graph(n,*args):
         plt.plot(freqs, res[:40000])
         plt.xlabel("Frequence (Hz)")
         plt.ylabel("Amplitude")
-        plt.xlim([0,1500])
+        plt.xlim([0,20000])
         plt.ylim(bottom = 0)
         plt.title(((args[graph-1]).split("\\")[-1]).split(".")[0])
         
@@ -110,6 +110,9 @@ for fichier in os.listdir("C:\\Users\\marti\\Desktop\\Dossiers\\Coding\\Projet 2
 
 print("Disponible samples :", *fichiers, sep=" | ")
 
-# showing the fft averaged graph
-show_averaged_fourier_graph(8,get_loc("v1"),get_loc("f1"),get_loc("vet"),get_loc("fet"),get_loc("v2"),get_loc("f2"),get_loc("v3"),get_loc("f3"))
+
+
+# -------------------------------- showing the fft averaged graph --------------------------------------
+
+show_averaged_fourier_graph(4,get_loc("v1"),get_loc("f1"),get_loc("vet"),get_loc("fet"))
 
