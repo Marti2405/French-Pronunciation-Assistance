@@ -1,34 +1,13 @@
+import imp
 import scipy.io.wavfile as wf
-import scipy
 import scipy.fftpack as fftpk
 import numpy as np
 from matplotlib import pyplot as plt
-import os , sys
+import os 
 import math
+from supress_output import suppress_output
 
-# class to remove output text 
-class suppress_output:
-    def __init__(self, suppress_stdout=False, suppress_stderr=False):
-        self.suppress_stdout = suppress_stdout
-        self.suppress_stderr = suppress_stderr
-        self._stdout = None
-        self._stderr = None
 
-    def __enter__(self):
-        devnull = open(os.devnull, "w")
-        if self.suppress_stdout:
-            self._stdout = sys.stdout
-            sys.stdout = devnull
-
-        if self.suppress_stderr:
-            self._stderr = sys.stderr
-            sys.stderr = devnull
-
-    def __exit__(self, *args):
-        if self.suppress_stdout:
-            sys.stdout = self._stdout
-        if self.suppress_stderr:
-            sys.stderr = self._stderr
 
 # this procedure shows the averaged fft graph of the .wav input file // ->(number_of_files_to_compare , file_1, file_2 ,..., file_n)
 def show_averaged_fourier_graph(n,*args):

@@ -2,6 +2,7 @@ import scipy.io.wavfile as wf
 import scipy.fftpack as fftpk
 import numpy as np
 import os
+from supress_output import suppress_output
 
 
 # this function creates a matrice of 40000 lines from a .wav file. Used as input for the Neural Network.
@@ -9,7 +10,10 @@ import os
 def create_nn_input_fv(PATH):
     
     # fast fourier transform of the input signal
-    s_rate , signal = wf.read(PATH)
+    with suppress_output(suppress_stdout=True, suppress_stderr=True):
+        #we don't print the output message of this function
+        s_rate , signal = wf.read(PATH)
+        
     FFT = np.abs(fftpk.fft(signal))
     freqs = fftpk.fftfreq(len(FFT), (1.0/s_rate))
 
@@ -21,7 +25,10 @@ def create_nn_input_fv(PATH):
     den = 0
     for i,f in enumerate(freqs[range(len(FFT)//2)]):
         if f <= a:
-            sum += FFT[i][0]
+            try :
+                sum += FFT[i][0]
+            except:
+                sum += FFT[i]
             den+=1
         else:
             if den == 0:
@@ -30,7 +37,10 @@ def create_nn_input_fv(PATH):
                 res.append(sum/den)
             
             if f <= a + 0.5 :
-                sum = FFT[i][0]
+                try :
+                    sum = FFT[i][0]
+                except:
+                    sum = FFT[i]
                 den = 1
                 a +=0.5
             else :
