@@ -72,3 +72,29 @@ fft1 = os.path.join(__location__, 'audio_samples\\fft1.wav')
 vvt1 = os.path.join(__location__, 'audio_samples\\vvt1.wav')
 fem1 = os.path.join(__location__, 'audio_samples\\fem1.wav')
 vem1 = os.path.join(__location__, 'audio_samples\\vem1.wav')
+
+def nom(x):
+    return os.path.join(__location__,'audio_samples\\mt_audio',f'{x}.wav')
+
+def voisement(x):
+    y = sum(create_nn_input_fv(nom(x)))/1000
+    print(f"Voisement de {x} : {y*100}%")
+
+voisement("v0")
+voisement("v1")
+voisement("v2")
+voisement("v3")
+voisement("v4")
+voisement("f0")
+voisement("f1")
+voisement("f2")
+voisement("f3")
+voisement("f4")
+
+
+
+
+
+
+
+

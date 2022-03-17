@@ -1,4 +1,3 @@
-import imp
 import scipy.io.wavfile as wf
 import scipy.fftpack as fftpk
 import numpy as np
@@ -80,7 +79,7 @@ def show_averaged_fourier_graph(n,*args):
 
 def get_loc (nom):
     __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
-    return os.path.join(__location__, f'audio_samples\\{nom}.wav')
+    return os.path.join(__location__, f'audio_samples\\mt_audio\\{nom}.wav')
 
 # Disponible samples
 fichiers = []
@@ -93,5 +92,5 @@ print("Disponible samples :", *fichiers, sep=" | ")
 
 # -------------------------------- showing the fft averaged graph --------------------------------------
 
-show_averaged_fourier_graph(4,get_loc("v1"),get_loc("f1"),get_loc("vet"),get_loc("fet"))
+show_averaged_fourier_graph(6,get_loc("v0"),get_loc("v1"),get_loc("f0"),get_loc("f1"),get_loc("f4"),get_loc("v4"))
 
