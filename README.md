@@ -1,6 +1,6 @@
 # French oral aid software using the Fourier transform and Neural Networks
 
-Detection and accuracy evaluation of pairs of consonants in oral French.
+Detection and evaluation of pronunciation accuracy of consonant pairs in spoken French.
 
 Specified for voiceless/voice fricatives consonants.
 
@@ -14,10 +14,3 @@ and energy comparing them with the aimed results.
 
 ![Captura](https://user-images.githubusercontent.com/77886135/151235623-0ae2dc95-af96-410c-8002-ce4975754b4d.PNG)
 
-
-Algorithm description :
-
----WORKING---
-.
-..
-...
