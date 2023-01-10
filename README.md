@@ -14,5 +14,5 @@ and energy comparing them with the aimed results.
 
 ![Captura](https://user-images.githubusercontent.com/77886135/151235623-0ae2dc95-af96-410c-8002-ce4975754b4d.PNG)
 
-Please note: The neural network weights present in the file Weights are not the final weights after training.
+Please note: The neural network weights present in the file Weights_Neural_Network are not the final weights after training.
 
